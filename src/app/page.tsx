@@ -6,10 +6,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const placeholderImages = [
-  "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2071&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1554048665-8ce66cb314d3?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1627483262268-9c2b5b4290a0?q=80&w=2070&auto=format&fit=crop",
 ];
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50 z-10" />
           <img
             src={placeholderImages[currentIndex]}
-            alt="Creative Photography"
+            alt=""
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -50,10 +50,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight"
+          className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight uppercase"
         >
-          CREATIVE <br />
-          <span className="text-primary">PHOTOGRAPHY</span>
+          Capturing the <br />
+          <span className="text-primary">Unseen</span>
         </motion.h1>
         
         <motion.p
@@ -62,7 +62,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light"
         >
-          Elevating moments into timeless art. Explore our premium portfolio or book a session to capture your vision.
+          We craft premium visual legacies for brands, couples, and visionaries. Explore our curated portfolio or commission a shoot to freeze your moment in time.
         </motion.p>
         
         <motion.div
@@ -75,14 +75,14 @@ export default function Home() {
             href="/portfolio"
             className="px-8 py-4 bg-primary text-white rounded-full font-bold uppercase tracking-wider hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-primary/30"
           >
-            Explore Work
+            Enter Gallery
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/about"
             className="px-8 py-4 glass text-white rounded-full font-bold uppercase tracking-wider hover:bg-white/10 transition-all text-center"
           >
-            About Us
+            The Vision
           </Link>
         </motion.div>
       </div>
