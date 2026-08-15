@@ -176,6 +176,7 @@ export default function Contact() {
           </div>
         </motion.div>
       </div>
+      </div>
     </div>
   );
 }
