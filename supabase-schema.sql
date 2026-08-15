@@ -39,7 +39,18 @@ CREATE TABLE reviews (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
--- 5. Set up Storage Bucket (Requires Supabase UI or API, but here are the SQL policies)
+-- 5. Create Messages Table (For Contact Us form)
+CREATE TABLE messages (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  subject TEXT NOT NULL,
+  content TEXT NOT NULL,
+  is_read BOOLEAN DEFAULT false,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 6. Set up Storage Bucket (Requires Supabase UI or API, but here are the SQL policies)
 -- Note: You MUST manually create a public bucket named 'gallery' in the Supabase Storage UI.
 -- The following policies ensure anyone can view images, but only authenticated or service roles can upload.
 -- (We will use the Anon Key + Server Actions to manage uploads securely)

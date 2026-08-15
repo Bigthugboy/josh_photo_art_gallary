@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LayoutDashboard, Image as ImageIcon, MessageSquare, LogOut, Camera } from "lucide-react";
+import { LayoutDashboard, Image as ImageIcon, MessageSquare, LogOut, Camera, Mail } from "lucide-react";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -50,6 +50,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/admin/reviews" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-foreground/80 hover:text-white">
             <MessageSquare className="w-5 h-5" />
             <span className="font-medium">Reviews</span>
+          </Link>
+          <Link href="/admin/messages" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-foreground/80 hover:text-white">
+            <Mail className="w-5 h-5" />
+            <span className="font-medium">Inbox</span>
           </Link>
         </nav>
 
