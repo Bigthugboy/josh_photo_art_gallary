@@ -16,10 +16,10 @@ export default function About() {
             The Vision Behind <br/><span className="text-primary">Josh Gallery</span>
           </h1>
           <p className="text-foreground/70 mb-6 leading-relaxed text-lg">
-            At Josh Photo & Art Gallery, we believe that every moment holds a unique piece of art waiting to be captured. Founded on the principles of creativity and visual storytelling, we specialize in delivering premium media experiences.
+            At Josh Gallery, we don't just click a shutter; we freeze time in its most beautiful state. Founded on the principles of relentless creativity and bold visual storytelling, we specialize in delivering uncompromising, high-end media experiences.
           </p>
           <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
-            Whether it's a grand wedding, an intimate portrait session, or a commercial shoot, our team blends technical mastery with an artistic eye to produce striking, cinematic visuals that stand the test of time.
+            From the raw emotion of a cinematic wedding to the bold identity of a commercial brand, our team blends technical mastery with an artistic eye to produce striking visual legacies that demand to be seen.
           </p>
           
           <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
