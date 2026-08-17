@@ -32,10 +32,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {!isLoginPage && (
       <aside className="w-full md:w-64 glass border-r border-white/5 flex flex-col p-6 shadow-2xl z-40 md:min-h-screen">
         <div className="flex items-center gap-2 mb-12">
-          <Camera className="w-8 h-8 text-primary" />
-          <span className="text-xl font-bold tracking-wider">
-            ADMIN<span className="text-primary font-light">PANEL</span>
-          </span>
+          <Link href="/" className="inline-block">
+            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-12 w-auto object-contain mix-blend-screen brightness-110 contrast-125" />
+          </Link>
         </div>
 
         <nav className="flex-grow space-y-2">
