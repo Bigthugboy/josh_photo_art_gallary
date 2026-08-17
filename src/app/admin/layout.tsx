@@ -30,10 +30,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <div className="min-h-screen bg-[#020202] text-foreground flex flex-col md:flex-row">
       {/* Sidebar */}
       {!isLoginPage && (
-      <aside className="w-full md:w-64 glass border-r border-white/5 flex flex-col p-6 shadow-2xl z-40 md:min-h-screen">
+      <aside className="w-full md:w-64 bg-black border-r border-white/5 flex flex-col p-6 shadow-2xl z-40 md:min-h-screen">
         <div className="flex items-center gap-2 mb-12">
           <Link href="/" className="inline-block">
-            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-12 w-auto object-contain mix-blend-screen brightness-110 contrast-125" />
+            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-12 w-auto object-contain" />
           </Link>
         </div>
 
