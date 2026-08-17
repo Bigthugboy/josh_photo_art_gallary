@@ -11,11 +11,11 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-accent text-accent-foreground py-12 border-t border-white/10">
+    <footer className="bg-black text-accent-foreground py-12 border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
           <Link href="/" className="inline-block">
-            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-16 w-auto object-contain mix-blend-screen brightness-110 contrast-125" />
+            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-16 w-auto object-contain" />
           </Link>
           <p className="text-sm text-foreground/60 leading-relaxed">
             Capturing moments, creating art. A premium photography and creative media agency dedicated to visual excellence.
