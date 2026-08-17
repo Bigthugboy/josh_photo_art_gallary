@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Josh Photo & Art Gallery | Creative Media Agency",
+  title: "Retro Imprint | Creative Media Agency",
   description: "A premium photography and creative media agency portfolio. Book sessions, view our rate card, and explore categorized artistic content.",
 };
 
