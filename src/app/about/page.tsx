@@ -30,10 +30,10 @@ export default function About() {
             The Vision Behind <br /><span className="text-primary">Retro Imprint</span>
           </h1>
           <p className="text-foreground/70 mb-6 leading-relaxed text-lg">
-            At Retro Imprint, we don't just click a shutter, we freeze time in its most beautiful state. Founded on the principles of relentless creativity and bold visual storytelling, we specialize in delivering uncompromising, high-end media experiences.
+            At Retro Imprint, we don’t just click a shutter, we freeze time in its most beautiful state. Founded on the principles of relentless creativity and bold visual storytelling, we specialize in delivering uncompromising, high end media experiences.
           </p>
           <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
-            From the raw emotion of a cinematic wedding to the bold identity of a commercial brand, our team blends technical mastery with an artistic eye to produce striking visual legacies that demand to be seen.
+            From the raw emotion of a cinematic wedding to the bold identity of a commercial brand, I blend technical mastery with an artistic eye backed by a trusted network of creatives to produce striking visual legacies that demand to be seen.
           </p>
 
           <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
