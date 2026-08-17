@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { submitMessage } from "@/app/actions/contact";
 
@@ -65,7 +65,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <a href="mailto:hello@joshgallery.com" className="text-foreground/70 hover:text-primary transition-colors">hello@joshgallery.com</a>
+                  <a href="mailto:retrographyimprint@gmail.com" className="text-foreground/70 hover:text-primary transition-colors">retrographyimprint@gmail.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -74,16 +74,27 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
-                  <a href="tel:+1234567890" className="text-foreground/70 hover:text-primary transition-colors">+1 (234) 567-890</a>
+                  <a href="tel:07928894094" className="text-foreground/70 hover:text-primary transition-colors">07928894094</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                  <MapPin className="w-6 h-6" />
+                  {/* Instagram Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Studio Location</h3>
-                  <p className="text-foreground/70">123 Creative Avenue, Arts District<br/>New York, NY 10001</p>
+                  <h3 className="font-semibold mb-1">Instagram</h3>
+                  <a href="https://instagram.com/retro__graphy" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-primary transition-colors">@retro__graphy</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                  {/* TikTok Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-1">TikTok</h3>
+                  <a href="https://tiktok.com/@retro_graphy" target="_blank" rel="noreferrer" className="text-foreground/70 hover:text-primary transition-colors">@retro_graphy</a>
                 </div>
               </div>
             </div>
