@@ -39,7 +39,7 @@ export function Navbar() {
     <header className="sticky top-0 w-full z-50 bg-black shadow-2xl py-3 border-b border-white/10">
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center gap-8">
         <Link href="/" className="flex items-center gap-2 group shrink-0">
-          <img src="/images/logo.jpg" alt="Retro Imprint Logo" className="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
+          <img src="/images/logo.png" alt="Retro Imprint Logo" className="h-14 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
         </Link>
 
         {/* Desktop Navigation */}
