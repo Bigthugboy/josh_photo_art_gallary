@@ -47,7 +47,7 @@ export default function AdminLogin() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-black/50 border border-white/10 rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-primary transition-colors text-white" 
-                placeholder="admin@joshgallery.com" 
+                placeholder="admin@retroimprint.com" 
                 required
               />
             </div>
