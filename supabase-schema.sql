@@ -54,3 +54,24 @@ CREATE TABLE messages (
 -- Note: You MUST manually create a public bucket named 'gallery' in the Supabase Storage UI.
 -- The following policies ensure anyone can view images, but only authenticated or service roles can upload.
 -- (We will use the Anon Key + Server Actions to manage uploads securely)
+
+-- 7. Create Pricing Packages Table
+CREATE TABLE IF NOT EXISTS pricing_packages (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  price TEXT NOT NULL,
+  image_url TEXT NOT NULL,
+  description TEXT NOT NULL,
+  features JSONB NOT NULL DEFAULT '[]'::jsonb,
+  is_popular BOOLEAN DEFAULT false,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Insert initial packages only if table is empty
+INSERT INTO pricing_packages (name, price, image_url, description, features, is_popular)
+SELECT * FROM (VALUES
+  ('The Signature Portrait', '$299', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop', 'Perfect for personal branding, editorials, and intimate portraits.', '["1 Hour Session", "Creative Direction", "15 High-End Retouched Photos", "Private Online Gallery"]'::jsonb, false),
+  ('The Cinematic Collection', '$599', 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop', 'Ideal for couples, editorial campaigns, and extensive shoots.', '["2-3 Hour Session", "Up to 2 Locations", "40 High-End Retouched Photos", "Cinematic Color Grading", "Private Online Gallery"]'::jsonb, true),
+  ('The Luxury Event', '$1200', 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop', 'Comprehensive coverage for high-end weddings and elite events.', '["6 Hours Coverage", "Second Shooter Included", "200+ Masterfully Edited Photos", "Next-Day Teaser Delivery", "Private Online Gallery"]'::jsonb, false)
+) AS v(name, price, image_url, description, features, is_popular)
+WHERE NOT EXISTS (SELECT 1 FROM pricing_packages);
