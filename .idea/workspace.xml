@@ -7,8 +7,6 @@
     <list default="true" id="180072a8-3f3a-464e-872b-e7099632bbb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/about/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/about/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pricing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pricing/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,21 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3HvIJCNZMbg1xbEXyLhzzJBo7cT" />
+  <component name="ProjectSessionTemplates">
+    <option name="panelTemplate">
+      <template>
+        <option name="modeId" value="Agent" />
+        <option name="model">
+          <model>
+            <option name="modelType" value="builtin_id" />
+            <option name="modelValue" value="auto" />
+          </model>
+        </option>
+        <option name="targetType" value="BACKGROUND" />
+        <option name="worktreeMode" value="WORKSPACE" />
+      </template>
+    </option>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -68,7 +81,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/admin/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;
+    &quot;ts.external.directory.path&quot;: &quot;/Users/admin/WebstormProjects/josh_photo_art_gallary/node_modules/typescript/lib&quot;
   }
 }</component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -102,7 +115,8 @@
       <updated>1786742041777</updated>
       <workItem from="1786742042768" duration="980000" />
       <workItem from="1786743566466" duration="5286000" />
-      <workItem from="1786809114291" duration="1758000" />
+      <workItem from="1786809114291" duration="3851000" />
+      <workItem from="1786956895696" duration="1333000" />
     </task>
     <task id="LOCAL-00001" summary="update global styles for improved theming and font settings">
       <option name="closed" value="true" />
@@ -304,22 +318,93 @@
       <option name="project" value="LOCAL" />
       <updated>1786764804702</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update page content to enhance brand messaging and storytelling">
+      <option name="closed" value="true" />
+      <created>1786814608417</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1786814608417</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update pricing packages and enhance visual storytelling elements">
+      <option name="closed" value="true" />
+      <created>1786814661398</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1786814661398</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update homepage content to enhance visual storytelling and brand messaging">
+      <option name="closed" value="true" />
+      <created>1786814672966</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1786814672966</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add inbox link to admin layout and create messages table in Supabase schema">
+      <option name="closed" value="true" />
+      <created>1786815241131</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815241132</updated>
+    </task>
+    <task id="LOCAL-00030" summary="add contact link to navbar for improved site navigation">
+      <option name="closed" value="true" />
+      <created>1786815247987</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815247987</updated>
+    </task>
+    <task id="LOCAL-00031" summary="enhance contact form with state management and submission feedback">
+      <option name="closed" value="true" />
+      <created>1786815255515</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815255515</updated>
+    </task>
+    <task id="LOCAL-00032" summary="update workspace configuration for improved project management and version control setup">
+      <option name="closed" value="true" />
+      <created>1786815262961</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815262961</updated>
+    </task>
+    <task id="LOCAL-00033" summary="add message handling functions for contact form in Supabase">
+      <option name="closed" value="true" />
+      <created>1786815270641</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815270641</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add message manager component for inbox with read and delete functionality">
+      <option name="closed" value="true" />
+      <created>1786815284108</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815284109</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add InspectionProjectProfileManager component with ESLint configuration">
+      <option name="closed" value="true" />
+      <created>1786815291517</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1786815291517</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update global styles for improved theming and font settings" />
-    <MESSAGE value="update layout to include Navbar and Footer components, and modify metadata for the gallery" />
-    <MESSAGE value="add dependencies for Supabase, Framer Motion, Lucide React, React Calendly, and Resend" />
-    <MESSAGE value="implement background image slider and enhance hero section with animations" />
-    <MESSAGE value="add admin login function to authenticate users" />
-    <MESSAGE value="add dashboard stats retrieval function to fetch media count, pending reviews, and recent activity" />
-    <MESSAGE value="add footer component with navigation links and social media icons" />
-    <MESSAGE value="add gallery functions for category management and media operations" />
-    <MESSAGE value="add admin layout component with sidebar navigation and authentication" />
     <MESSAGE value="add navbar component with responsive design and mobile menu toggle" />
     <MESSAGE value="add About page component with animated content and statistics display" />
     <MESSAGE value="add Dashboard component with statistics overview and recent activity display" />
@@ -335,6 +420,16 @@
     <MESSAGE value="add Supabase client for database interactions" />
     <MESSAGE value="add Supabase schema for admins, categories, media, and reviews tables" />
     <MESSAGE value="add VCS configuration files for version control setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="add VCS configuration files for version control setup" />
+    <MESSAGE value="update page content to enhance brand messaging and storytelling" />
+    <MESSAGE value="update pricing packages and enhance visual storytelling elements" />
+    <MESSAGE value="update homepage content to enhance visual storytelling and brand messaging" />
+    <MESSAGE value="add inbox link to admin layout and create messages table in Supabase schema" />
+    <MESSAGE value="add contact link to navbar for improved site navigation" />
+    <MESSAGE value="enhance contact form with state management and submission feedback" />
+    <MESSAGE value="update workspace configuration for improved project management and version control setup" />
+    <MESSAGE value="add message handling functions for contact form in Supabase" />
+    <MESSAGE value="add message manager component for inbox with read and delete functionality" />
+    <MESSAGE value="add InspectionProjectProfileManager component with ESLint configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add InspectionProjectProfileManager component with ESLint configuration" />
   </component>
 </project>
