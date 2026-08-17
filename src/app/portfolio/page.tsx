@@ -165,13 +165,13 @@ export default function Portfolio() {
               <>
                 <button 
                   onClick={handlePrev}
-                  className="absolute left-4 md:left-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-[110]"
+                  className="hidden md:flex absolute left-4 md:left-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 items-center justify-center text-white transition-colors z-[110]"
                 >
                   <ChevronLeft className="w-8 h-8" />
                 </button>
                 <button 
                   onClick={handleNext}
-                  className="absolute right-4 md:right-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-[110]"
+                  className="hidden md:flex absolute right-4 md:right-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 items-center justify-center text-white transition-colors z-[110]"
                 >
                   <ChevronRight className="w-8 h-8" />
                 </button>
@@ -184,13 +184,13 @@ export default function Portfolio() {
               animate={{ scale: 1, opacity: 1, x: 0 }}
               exit={{ scale: 0.95, opacity: 0, x: -20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-5xl w-full max-h-full flex items-center justify-center px-12"
+              className="relative max-w-5xl w-full max-h-full flex items-center justify-center px-4 md:px-12"
               onClick={(e) => e.stopPropagation()} // Prevent clicking the image from closing
             >
               {selectedMedia.type === 'video' ? (
                 <video 
                   src={selectedMedia.url} 
-                  className="max-w-full max-h-[85vh] rounded-xl shadow-2xl" 
+                  className="max-w-full max-h-[85vh] md:max-h-[85vh] rounded-xl shadow-2xl" 
                   controls 
                   autoPlay 
                 />
