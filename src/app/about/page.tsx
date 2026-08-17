@@ -20,22 +20,22 @@ export default function About() {
   return (
     <div className="pt-32 pb-20 min-h-screen px-6 md:px-12 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        
+
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            The Vision Behind <br/><span className="text-primary">Retro Imprint</span>
+            The Vision Behind <br /><span className="text-primary">Retro Imprint</span>
           </h1>
           <p className="text-foreground/70 mb-6 leading-relaxed text-lg">
-            At Retro Imprint, we don't just click a shutter; we freeze time in its most beautiful state. Founded on the principles of relentless creativity and bold visual storytelling, we specialize in delivering uncompromising, high-end media experiences.
+            At Retro Imprint, we don't just click a shutter, we freeze time in its most beautiful state. Founded on the principles of relentless creativity and bold visual storytelling, we specialize in delivering uncompromising, high-end media experiences.
           </p>
           <p className="text-foreground/70 mb-8 leading-relaxed text-lg">
             From the raw emotion of a cinematic wedding to the bold identity of a commercial brand, our team blends technical mastery with an artistic eye to produce striking visual legacies that demand to be seen.
           </p>
-          
+
           <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
             <div>
               <div className="text-4xl font-bold text-primary mb-2">500+</div>
@@ -56,9 +56,9 @@ export default function About() {
         >
           <div className="w-full h-full rounded-2xl overflow-hidden relative">
             <AnimatePresence mode="popLayout">
-              <motion.img 
+              <motion.img
                 key={currentIndex}
-                src={aboutImages[currentIndex]} 
+                src={aboutImages[currentIndex]}
                 alt="Retro Imprint - The Visionary"
                 className="w-full h-full object-cover absolute inset-0"
                 initial={{ opacity: 0 }}
