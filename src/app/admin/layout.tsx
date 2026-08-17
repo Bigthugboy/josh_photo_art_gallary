@@ -33,7 +33,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       <aside className="w-full md:w-64 bg-black border-r border-white/5 flex flex-col p-6 shadow-2xl z-40 md:min-h-screen">
         <div className="flex items-center gap-2 mb-12">
           <Link href="/" className="inline-block">
-            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-12 w-auto object-contain" />
+            <img src="/images/logo.png" alt="Retro Imprint" className="h-12 w-auto object-contain" />
           </Link>
         </div>
 
@@ -45,6 +45,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <Link href="/admin/gallery" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-foreground/80 hover:text-white">
             <ImageIcon className="w-5 h-5" />
             <span className="font-medium">Gallery</span>
+          </Link>
+          <Link href="/admin/pricing" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-foreground/80 hover:text-white">
+            <span className="w-5 h-5 flex items-center justify-center font-bold border rounded-full border-current text-sm">$</span>
+            <span className="font-medium">Pricing</span>
           </Link>
           <Link href="/admin/reviews" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-foreground/80 hover:text-white">
             <MessageSquare className="w-5 h-5" />
