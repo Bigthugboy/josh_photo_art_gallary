@@ -15,10 +15,10 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="space-y-4">
           <Link href="/" className="inline-block">
-            <img src="/images/logo.jpg" alt="Retro Imprint" className="h-16 w-auto object-contain" />
+            <img src="/images/logo.png" alt="Retro Imprint" className="h-16 w-auto object-contain" />
           </Link>
           <p className="text-sm text-foreground/60 leading-relaxed">
-            Capturing moments, creating art. A premium photography and creative media agency dedicated to visual excellence.
+            Capturing moments, creating art. A premium photography and creative media practice, backed by a trusted network of creatives dedicated to visual excellence.
           </p>
         </div>
 
