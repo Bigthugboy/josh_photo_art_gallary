@@ -21,16 +21,22 @@ export async function getMedia(categoryId?: string) {
 
 export async function deleteMedia(id: string, url: string) {
   const { error } = await supabase.from('media').delete().eq('id', id);
-  if (!error) {
-    const path = url.split('/').pop();
-    if (path) {
-      await supabase.storage.from('gallery').remove([path]);
-    }
-  }
+  // Note: We are no longer deleting from Supabase Storage.
+  // The file remains in Cloudinary unless deleted from the Cloudinary dashboard.
   return !error;
 }
 
 export async function addMediaRecord(url: string, type: string, category_id: string) {
   const { error } = await supabase.from('media').insert([{ url, type, category_id }]);
+  return !error;
+}
+
+export async function deleteCategory(id: string) {
+  const { error } = await supabase.from('categories').delete().eq('id', id);
+  return !error;
+}
+
+export async function deleteMediaBulk(ids: string[]) {
+  const { error } = await supabase.from('media').delete().in('id', ids);
   return !error;
 }
