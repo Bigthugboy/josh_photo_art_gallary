@@ -14,6 +14,7 @@ export default function GalleryManager() {
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [newCatName, setNewCatName] = useState("");
+  const [previewMedia, setPreviewMedia] = useState<any>(null);
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadCategory, setUploadCategory] = useState("");
@@ -266,7 +267,7 @@ export default function GalleryManager() {
       {loading ? <p>Loading media...</p> : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {media.map((item) => (
-            <div key={item.id} className="group relative aspect-square rounded-2xl overflow-hidden glass border border-white/5">
+            <div key={item.id} className="group relative aspect-square rounded-2xl overflow-hidden glass border border-white/5 cursor-pointer" onClick={() => !bulkMode && setPreviewMedia(item)}>
               {item.type === 'video' ? (
                 <video src={item.url} className="w-full h-full object-cover" muted autoPlay loop />
               ) : (
@@ -307,6 +308,41 @@ export default function GalleryManager() {
             </div>
           ))}
           {media.length === 0 && <p className="col-span-full text-foreground/50">No media found in this category.</p>}
+        </div>
+      )}
+
+      {/* Full Screen Preview Modal */}
+      {previewMedia && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+          onClick={() => setPreviewMedia(null)}
+        >
+          <button 
+            onClick={() => setPreviewMedia(null)}
+            className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-[110]"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          
+          <div 
+            className="relative max-w-5xl w-full max-h-full flex items-center justify-center px-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {previewMedia.type === 'video' ? (
+              <video 
+                src={previewMedia.url} 
+                className="max-w-full max-h-[85vh] rounded-xl shadow-2xl" 
+                controls 
+                autoPlay 
+              />
+            ) : (
+              <img 
+                src={previewMedia.url} 
+                alt="Enlarged preview" 
+                className="max-w-full max-h-[85vh] rounded-xl shadow-2xl object-contain pointer-events-none" 
+              />
+            )}
+          </div>
         </div>
       )}
     </div>
