@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { UploadCloud, X, Trash2, CheckSquare, Plus } from "lucide-react";
 import { motion } from "framer-motion";
-import { getCategories, addCategory, getMedia, deleteMedia, addMediaRecord } from "@/app/actions/gallery";
+import { getCategories, addCategory, getMedia, deleteMedia, addMediaRecord, deleteCategory, deleteMediaBulk } from "@/app/actions/gallery";
 import { supabase } from "@/lib/supabase";
 
 export default function GalleryManager() {
@@ -17,6 +17,8 @@ export default function GalleryManager() {
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadCategory, setUploadCategory] = useState("");
+  const [bulkMode, setBulkMode] = useState(false);
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const fetchData = async () => {
     setLoading(true);
@@ -46,53 +48,62 @@ export default function GalleryManager() {
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !uploadCategory) {
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0 || !uploadCategory) {
       alert("Please select a file and a category first.");
       return;
     }
     
     setUploading(true);
-    setUploadProgress(10);
+    setUploadProgress(0);
     
-    // Simulate upload progress
-    const progressInterval = setInterval(() => {
-      setUploadProgress(prev => {
-        if (prev >= 90) return prev;
-        return prev + 10;
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const isVideo = file.type.startsWith('video');
+      const uploadUrl = "https://api.cloudinary.com/v1_1/v6vbvolm/auto/upload";
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "emdmeyly");
+
+      await new Promise<void>((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", uploadUrl, true);
+
+        xhr.upload.onprogress = (e) => {
+          if (e.lengthComputable) {
+            const percentComplete = Math.round((e.loaded / e.total) * 100);
+            const overallProgress = Math.round(((i * 100) + percentComplete) / files.length);
+            setUploadProgress(overallProgress);
+          }
+        };
+
+        xhr.onload = async () => {
+          if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            await addMediaRecord(response.secure_url, isVideo ? 'video' : 'image', uploadCategory);
+            resolve();
+          } else {
+            console.error("Upload failed:", xhr.responseText);
+            resolve(); // continue with next file even if one fails
+          }
+        };
+
+        xhr.onerror = () => {
+          console.error("Network error");
+          resolve();
+        };
+
+        xhr.send(formData);
       });
-    }, 500);
-
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Math.random()}.${fileExt}`;
-    const filePath = `${fileName}`;
-
-    // Upload to Supabase Storage
-    const { error: uploadError } = await supabase.storage.from('gallery').upload(filePath, file);
-    
-    clearInterval(progressInterval);
-    setUploadProgress(100);
-
-    if (uploadError) {
-      alert("Upload failed: " + uploadError.message);
-      setUploading(false);
-      setUploadProgress(0);
-      return;
     }
 
-    // Get public URL
-    const { data: { publicUrl } } = supabase.storage.from('gallery').getPublicUrl(filePath);
-
-    // Save record to DB
-    const isVideo = file.type.startsWith('video');
-    await addMediaRecord(publicUrl, isVideo ? 'video' : 'image', uploadCategory);
-    
     setTimeout(() => {
       setUploading(false);
       setUploadProgress(0);
       if (fileInputRef.current) fileInputRef.current.value = '';
       fetchData();
-    }, 500); // give the user 500ms to see 100% completion
+    }, 500);
   };
 
   const handleDelete = async (id: string, url: string) => {
@@ -102,10 +113,49 @@ export default function GalleryManager() {
     }
   };
 
+  const handleBulkDelete = async () => {
+    if (selectedIds.length === 0) return;
+    if (confirm(`Delete ${selectedIds.length} items?`)) {
+      await deleteMediaBulk(selectedIds);
+      setSelectedIds([]);
+      setBulkMode(false);
+      fetchData();
+    }
+  };
+
+  const handleDeleteCategory = async (catId: string, catName: string) => {
+    if (confirm(`Are you sure you want to delete the category "${catName}"? ALL media inside it will also be deleted!`)) {
+      await deleteCategory(catId);
+      if (selectedCategory === catName) setSelectedCategory("All");
+      fetchData();
+    }
+  };
+
   return (
     <div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <h1 className="text-3xl font-bold">Gallery Management</h1>
+        <div className="flex gap-4">
+          {bulkMode && selectedIds.length > 0 && (
+            <button 
+              onClick={handleBulkDelete}
+              className="px-4 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600 transition-colors flex items-center gap-2"
+            >
+              <Trash2 className="w-4 h-4" /> Delete Selected ({selectedIds.length})
+            </button>
+          )}
+          <button 
+            onClick={() => {
+              setBulkMode(!bulkMode);
+              if (bulkMode) setSelectedIds([]);
+            }}
+            className={`px-4 py-2 font-bold rounded-lg transition-colors flex items-center gap-2 ${
+              bulkMode ? 'bg-white text-black hover:bg-gray-200' : 'bg-primary/20 text-primary hover:bg-primary/30'
+            }`}
+          >
+            <CheckSquare className="w-4 h-4" /> {bulkMode ? 'Cancel Selection' : 'Select Multiple'}
+          </button>
+        </div>
       </div>
 
       {/* Category Management */}
@@ -131,7 +181,7 @@ export default function GalleryManager() {
           </div>
           <h3 className="text-xl font-bold mb-2">Upload Photos or Videos</h3>
           <p className="text-sm text-foreground/60 max-w-md mx-auto mb-6">
-            Ensure you have created the "gallery" public bucket in Supabase.
+            Files are automatically compressed and optimized via Cloudinary.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 items-center">
             <select 
@@ -148,6 +198,7 @@ export default function GalleryManager() {
               onChange={handleFileUpload} 
               className="hidden" 
               accept="image/*,video/*"
+              multiple
             />
             <button 
               onClick={() => fileInputRef.current?.click()}
@@ -190,15 +241,23 @@ export default function GalleryManager() {
             All
           </button>
           {categories.map(cat => (
-            <button 
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.name)}
-              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                selectedCategory === cat.name ? "bg-white/10 text-white" : "text-foreground/60 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {cat.name}
-            </button>
+            <div key={cat.id} className={`flex items-center rounded-lg overflow-hidden transition-colors ${
+              selectedCategory === cat.name ? "bg-white/10 text-white" : "text-foreground/60 hover:text-white hover:bg-white/5"
+            }`}>
+              <button 
+                onClick={() => setSelectedCategory(cat.name)}
+                className="px-4 py-1.5 text-sm font-medium"
+              >
+                {cat.name}
+              </button>
+              <button 
+                onClick={() => handleDeleteCategory(cat.id, cat.name)}
+                className="px-2 py-1.5 hover:bg-red-500 hover:text-white transition-colors"
+                title={`Delete ${cat.name}`}
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+              </button>
+            </div>
           ))}
         </div>
       </div>
@@ -214,12 +273,35 @@ export default function GalleryManager() {
                 <img src={item.url} alt="Gallery Item" className="w-full h-full object-cover" />
               )}
               
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button onClick={() => handleDelete(item.id, item.url)} className="w-8 h-8 rounded-full bg-red-500/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-red-500">
-                  <Trash2 className="w-4 h-4" />
-                </button>
-              </div>
-              <div className="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent">
+              {/* Bulk Selection Checkbox */}
+              {bulkMode && (
+                <div 
+                  className="absolute inset-0 bg-black/40 cursor-pointer flex items-start justify-end p-4"
+                  onClick={() => {
+                    if (selectedIds.includes(item.id)) {
+                      setSelectedIds(selectedIds.filter(id => id !== item.id));
+                    } else {
+                      setSelectedIds([...selectedIds, item.id]);
+                    }
+                  }}
+                >
+                  <div className={`w-6 h-6 rounded-md border-2 flex items-center justify-center transition-colors ${
+                    selectedIds.includes(item.id) ? 'bg-primary border-primary text-white' : 'border-white/50 bg-black/20'
+                  }`}>
+                    {selectedIds.includes(item.id) && <CheckSquare className="w-4 h-4" />}
+                  </div>
+                </div>
+              )}
+
+              {/* Single Delete Button (Only visible if not in bulk mode) */}
+              {!bulkMode && (
+                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button onClick={() => handleDelete(item.id, item.url)} className="w-8 h-8 rounded-full bg-red-500/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-red-500">
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+              <div className="absolute bottom-0 left-0 w-full p-3 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
                 <span className="text-xs font-bold uppercase tracking-wider text-white">{item.categories?.name}</span>
               </div>
             </div>
