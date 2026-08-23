@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="180072a8-3f3a-464e-872b-e7099632bbb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pricing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pricing/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +36,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.018851802047745" />
+      <entry key="MS500" value="1.6210611492998332" />
+      <entry key="S2" value="2.461539995723125" />
+      <entry key="S5" value="2.7610329123163413" />
+      <entry key="S10" value="2.8761570473788076" />
+      <entry key="S30" value="2.9577065313654933" />
+      <entry key="S60" value="2.9787238651964456" />
+      <entry key="M2" value="2.9893293653346387" />
+      <entry key="M5" value="2.99572390201977" />
+      <entry key="M10" value="2.9978606413192344" />
+      <entry key="M15" value="2.9985734696636506" />
+      <entry key="M30" value="2.999286589180512" />
+      <entry key="H1" value="2.9996432581692893" />
+      <entry key="H2" value="2.999821619978385" />
+      <entry key="H4" value="2.9999108077125003" />
+      <entry key="D1" value="2.9999851343025323" />
+      <entry key="W1" value="2.999997876321189" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9766001190542216" />
+      <entry key="MS500" value="1.599548806197037" />
+      <entry key="S2" value="2.4505232327879236" />
+      <entry key="S5" value="2.7557688420768063" />
+      <entry key="S10" value="2.8733577624770477" />
+      <entry key="S30" value="2.9567337023514146" />
+      <entry key="S60" value="2.97823231496564" />
+      <entry key="M2" value="2.9890822932832743" />
+      <entry key="M5" value="2.9956247602557293" />
+      <entry key="M10" value="2.997811018139463" />
+      <entry key="M15" value="2.998540375911652" />
+      <entry key="M30" value="2.9992700364858274" />
+      <entry key="H1" value="2.9996349803667863" />
+      <entry key="H2" value="2.9998174807132827" />
+      <entry key="H4" value="2.999908737988979" />
+      <entry key="D1" value="2.9999847893359766" />
+      <entry key="W1" value="2.999997827039943" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1,
@@ -81,7 +141,7 @@
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/admin/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;
+    &quot;ts.external.directory.path&quot;: &quot;/Users/admin/WebstormProjects/josh_photo_art_gallary/node_modules/typescript/lib&quot;
   }
 }</component>
   <component name="RunManager" selected="npm.Next.js: server-side">
@@ -119,86 +179,8 @@
       <workItem from="1786956895696" duration="1333000" />
       <workItem from="1786966374896" duration="3028000" />
       <workItem from="1787004367752" duration="3416000" />
-    </task>
-    <task id="LOCAL-00004" summary="add dependencies for Supabase, Framer Motion, Lucide React, React Calendly, and Resend">
-      <option name="closed" value="true" />
-      <created>1786764612671</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764612671</updated>
-    </task>
-    <task id="LOCAL-00005" summary="implement background image slider and enhance hero section with animations">
-      <option name="closed" value="true" />
-      <created>1786764617717</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764617717</updated>
-    </task>
-    <task id="LOCAL-00006" summary="add admin login function to authenticate users">
-      <option name="closed" value="true" />
-      <created>1786764629382</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764629382</updated>
-    </task>
-    <task id="LOCAL-00007" summary="add dashboard stats retrieval function to fetch media count, pending reviews, and recent activity">
-      <option name="closed" value="true" />
-      <created>1786764638111</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764638111</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add footer component with navigation links and social media icons">
-      <option name="closed" value="true" />
-      <created>1786764645510</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764645510</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add gallery functions for category management and media operations">
-      <option name="closed" value="true" />
-      <created>1786764652710</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764652710</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add admin layout component with sidebar navigation and authentication">
-      <option name="closed" value="true" />
-      <created>1786764658630</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764658630</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add navbar component with responsive design and mobile menu toggle">
-      <option name="closed" value="true" />
-      <created>1786764664763</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764664763</updated>
-    </task>
-    <task id="LOCAL-00012" summary="add About page component with animated content and statistics display">
-      <option name="closed" value="true" />
-      <created>1786764670305</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764670305</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add Dashboard component with statistics overview and recent activity display">
-      <option name="closed" value="true" />
-      <created>1786764675916</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764675916</updated>
+      <workItem from="1787009068891" duration="369000" />
+      <workItem from="1787518842858" duration="226000" />
     </task>
     <task id="LOCAL-00014" summary="add GalleryManager component for media upload and category management">
       <option name="closed" value="true" />
@@ -512,22 +494,93 @@
       <option name="project" value="LOCAL" />
       <updated>1786968170114</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="update footer logo image and enhance description for clarity">
+      <option name="closed" value="true" />
+      <created>1787009080635</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009080636</updated>
+    </task>
+    <task id="LOCAL-00054" summary="update logo image and add pricing link to admin layout">
+      <option name="closed" value="true" />
+      <created>1787009085847</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009085847</updated>
+    </task>
+    <task id="LOCAL-00055" summary="update logo">
+      <option name="closed" value="true" />
+      <created>1787009097960</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009097960</updated>
+    </task>
+    <task id="LOCAL-00056" summary="update logo image format from JPG to PNG for better quality">
+      <option name="closed" value="true" />
+      <created>1787009103375</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009103375</updated>
+    </task>
+    <task id="LOCAL-00057" summary="refine description for clarity and enhance personal touch in narrative">
+      <option name="closed" value="true" />
+      <created>1787009110335</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009110335</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add pricing packages and terms &amp; conditions modal with dynamic data fetching">
+      <option name="closed" value="true" />
+      <created>1787009115357</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009115357</updated>
+    </task>
+    <task id="LOCAL-00059" summary="add pricing packages table with initial data for various photography services">
+      <option name="closed" value="true" />
+      <created>1787009120802</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009120802</updated>
+    </task>
+    <task id="LOCAL-00060" summary="update workspace configuration for improved project management and version control setup">
+      <option name="closed" value="true" />
+      <created>1787009126403</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009126403</updated>
+    </task>
+    <task id="LOCAL-00061" summary="add admin interface for managing pricing packages with edit functionality">
+      <option name="closed" value="true" />
+      <created>1787009136307</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009136307</updated>
+    </task>
+    <task id="LOCAL-00062" summary="add functions for fetching and updating pricing packages">
+      <option name="closed" value="true" />
+      <created>1787009142430</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1787009142431</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update pricing packages and enhance visual storytelling elements" />
-    <MESSAGE value="update homepage content to enhance visual storytelling and brand messaging" />
-    <MESSAGE value="add inbox link to admin layout and create messages table in Supabase schema" />
-    <MESSAGE value="add contact link to navbar for improved site navigation" />
-    <MESSAGE value="enhance contact form with state management and submission feedback" />
-    <MESSAGE value="add message handling functions for contact form in Supabase" />
-    <MESSAGE value="add message manager component for inbox with read and delete functionality" />
-    <MESSAGE value="add InspectionProjectProfileManager component with ESLint configuration" />
-    <MESSAGE value="update footer component with new branding and social media links" />
     <MESSAGE value="refactor media deletion logic and add bulk delete functionality for media and categories" />
     <MESSAGE value="replace admin panel branding with logo in layout component" />
     <MESSAGE value="update site title in layout component to reflect new branding" />
@@ -536,7 +589,6 @@
     <MESSAGE value="add bulk delete functionality for media and categories, enhance file upload process" />
     <MESSAGE value="update email placeholder in contact form to reflect new admin address" />
     <MESSAGE value="update contact information and add social media links for Instagram and TikTok" />
-    <MESSAGE value="update workspace configuration for improved project management and version control setup" />
     <MESSAGE value="refactor About section for improved readability and consistency" />
     <MESSAGE value="update footer background color and adjust logo image styling for improved visibility" />
     <MESSAGE value="update sidebar background color and adjust logo image styling for consistency" />
@@ -544,6 +596,16 @@
     <MESSAGE value="added logo" />
     <MESSAGE value="add media preview functionality with full screen modal" />
     <MESSAGE value="update media controls and adjust layout for improved responsiveness" />
-    <option name="LAST_COMMIT_MESSAGE" value="update media controls and adjust layout for improved responsiveness" />
+    <MESSAGE value="update footer logo image and enhance description for clarity" />
+    <MESSAGE value="update logo image and add pricing link to admin layout" />
+    <MESSAGE value="update logo" />
+    <MESSAGE value="update logo image format from JPG to PNG for better quality" />
+    <MESSAGE value="refine description for clarity and enhance personal touch in narrative" />
+    <MESSAGE value="add pricing packages and terms &amp; conditions modal with dynamic data fetching" />
+    <MESSAGE value="add pricing packages table with initial data for various photography services" />
+    <MESSAGE value="update workspace configuration for improved project management and version control setup" />
+    <MESSAGE value="add admin interface for managing pricing packages with edit functionality" />
+    <MESSAGE value="add functions for fetching and updating pricing packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add functions for fetching and updating pricing packages" />
   </component>
 </project>

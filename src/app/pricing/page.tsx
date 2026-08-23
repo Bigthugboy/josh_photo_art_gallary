@@ -57,75 +57,68 @@ const termsContent = [
   {
     title: "1. Booking & Payment",
     items: [
-      "A non-refundable deposit 50% is required to secure the date.",
-      "Balance must be paid on or before the shoot day (before delivery of photos/videos)."
+      "A 50% deposit is required to secure the date.",
+      "Cancellations made less than 48 hours before the shoot will result in loss of the deposit."
     ]
   },
   {
-    title: "2. Cancellation & Rescheduling",
+    title: "2. Final Images",
     items: [
-      "Cancellations made less than 3 days before the shoot result in loss of deposit.",
-      "Rescheduling is allowed once subject to availability."
+      "You’ll get 5 edited images per outfit.",
+      "Videos are delivered in 4K.",
+      "Turnaround time: 24–48 hours after final payment and image selection.",
+      "Raw/unedited footage isn’t included unless agreed beforehand (extra cost applies)."
     ]
   },
   {
-    title: "3. Deliverables",
+    title: "3. Creative Vision & Prep",
     items: [
-      "Clients will receive 5 edited pictures per outfit.",
-      "Videos delivered in 4K resolution.",
-      "Delivery time: 24/48 hours after final payment and picture selection.",
-      "Raw/unedited photos and footage are not included unless agreed in advance (with additional cost)."
+      "A pre-shoot plan (mood board, outfits, location) needs to be locked in ahead of time so the day runs smoothly.",
+      "Editing style, colour grading, and final look are down to the photographer/cinematographer’s judgement.",
+      "Any edits requested outside that agreed style will come at an extra cost."
     ]
   },
   {
-    title: "4. Creative Direction & Pre-Planning",
+    title: "4. What’s Expected of You",
     items: [
-      "Pre-shoot planning (mood board, outfits, location scouting) is mandatory to ensure smooth workflow.",
-      "Photographer/Cinematographer has creative discretion in editing style, color grading, and final look.",
-      "Requests for re-editing beyond agreed style will incur extra charges."
+      "Please arrive on time and ready to shoot (outfits, makeup, props sorted in advance).",
+      "Lateness eats into shoot time the fee stays the same, plus £25 for every 30 minutes lost.",
+      "Extra outfits, locations, or additional time beyond what’s agreed will be charged separately."
     ]
   },
   {
-    title: "5. Client Responsibility",
+    title: "5. Usage & Ownership",
     items: [
-      "Client must arrive on time and prepared (outfits, makeup, props, etc.).",
-      "Late arrival reduces shoot time but does not reduce fee and comes with an extra fee of £25 per every 30 mins wasted.",
-      "Extra outfits, locations, or extended hours beyond agreement will incur additional charges."
+      "The photographer/cinematographer holds full copyright over all images and videos.",
+      "Commercial use (ads, billboards, resale, etc.) requires a separate licensing fee.",
+      "Credit (tag or mention) must be given when posting on social platforms."
     ]
   },
   {
-    title: "6. Usage Rights & Copyright",
+    title: "6. Files & Storage",
     items: [
-      "Photographer/Cinematographer retains full copyright of all images and videos.",
-      "Client who requests a license for commercial use (ads, billboards, resale, etc.) requires separate licensing fee.",
-      "Credit (tagging/mentioning) must be given when posting on social platforms."
+      "Final images will be shared via (Google Drive/Pixie-Set)."
     ]
   },
   {
-    title: "7. Delivery & Archiving",
+    title: "7. Risk & Responsibility",
     items: [
-      "Final deliverables will be shared via (Documents/WeTransfer)."
+      "Photographer takes no responsibility for delays caused by weather, venue restrictions, or third-party suppliers.",
+      "It’s on the client to sort any necessary permits if shooting in restricted locations.",
+      "Photographer can’t be held accountable for injuries, accidents, or damage to property during the shoot."
     ]
   },
   {
-    title: "8. Liability & Safety",
+    title: "8. Model Release & Consent",
     items: [
-      "Photographer is not liable for delays caused by weather, location restrictions, or third-party vendors.",
-      "Client is responsible for securing permits if shooting in restricted locations.",
-      "Photographer will not be held liable for injuries, accidents, or property damage during the shoot."
+      "Unless stated otherwise in writing, Client gives permission for images/videos to appear in the portfolio, on the website, and in promotional material.",
+      "If you’d rather keep the shoot fully private (no portfolio use), a buyout fee will apply."
     ]
   },
   {
-    title: "9. Confidentiality & Model Release",
+    title: "9. Additional Terms",
     items: [
-      "Client agrees that images/videos may be used for portfolio, website, and promotional purposes, unless otherwise agreed in writing.",
-      "For private shoots (no portfolio use), a buyout fee applies."
-    ]
-  },
-  {
-    title: "10. Miscellaneous",
-    items: [
-      "Travel/transport/accommodation fees may apply for shoots outside my city."
+      "Additional charges for travel, transport, or accommodation may apply for shoots taking place outside my city."
     ]
   }
 ];
