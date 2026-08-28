@@ -75,3 +75,7 @@ SELECT * FROM (VALUES
   ('The Luxury Event', '$1200', 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop', 'Comprehensive coverage for high-end weddings and elite events.', '["6 Hours Coverage", "Second Shooter Included", "200+ Masterfully Edited Photos", "Next-Day Teaser Delivery", "Private Online Gallery"]'::jsonb, false)
 ) AS v(name, price, image_url, description, features, is_popular)
 WHERE NOT EXISTS (SELECT 1 FROM pricing_packages);
+
+-- 8. Add is_highlight column to media table
+-- Run this to update existing schema
+ALTER TABLE media ADD COLUMN IF NOT EXISTS is_highlight BOOLEAN DEFAULT false;
