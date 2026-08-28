@@ -229,18 +229,18 @@ export default function Pricing() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white text-black max-w-4xl w-full max-h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col relative"
+              className="bg-[#0a0a0a] text-foreground border border-white/10 max-w-4xl w-full max-h-full rounded-3xl shadow-2xl overflow-hidden flex flex-col relative"
             >
               <button 
                 onClick={() => setShowTerms(false)}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors z-10"
+                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors z-10"
               >
-                <X className="w-5 h-5 text-gray-700" />
+                <X className="w-5 h-5 text-white" />
               </button>
 
               <div className="overflow-y-auto p-8 md:p-12 scrollbar-hide">
                 <div className="text-center mb-10 flex flex-col items-center">
-                  <img src="/images/logo.png" alt="Retro Imprint Logo" className="h-20 mb-6 object-contain invert mix-blend-multiply" />
+                  <img src="/images/logo.png" alt="Retro Imprint Logo" className="h-20 mb-6 object-contain" />
                   <div className="w-16 h-0.5 bg-[#e5b85a] mb-6"></div>
                   <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight">
                     Photography & Cinematography <br /> Terms & Conditions
@@ -253,7 +253,7 @@ export default function Pricing() {
                       <h3 className="text-xl font-bold text-[#cf9c3b] mb-4">{section.title}</h3>
                       <ul className="space-y-3">
                         {section.items.map((item, i) => (
-                          <li key={i} className="flex gap-4 items-start text-gray-800 leading-relaxed font-medium">
+                          <li key={i} className="flex gap-4 items-start text-foreground/80 leading-relaxed font-medium">
                             <span className="text-2xl leading-none mt-1">•</span>
                             <span>{item}</span>
                           </li>
