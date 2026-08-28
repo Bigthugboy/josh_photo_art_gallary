@@ -6,7 +6,7 @@ import { getCategories, getMedia } from "@/app/actions/gallery";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Highlights");
   const [categories, setCategories] = useState<any[]>([]);
   const [media, setMedia] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -15,7 +15,7 @@ export default function Portfolio() {
   useEffect(() => {
     async function fetchData() {
       const cats = await getCategories();
-      setCategories([{ id: "all", name: "All" }, ...cats]);
+      setCategories([{ id: "all", name: "Highlights" }, ...cats]);
       const items = await getMedia();
       setMedia(items);
       setLoading(false);
@@ -23,8 +23,8 @@ export default function Portfolio() {
     fetchData();
   }, []);
 
-  const filteredPhotos = activeCategory === "All" 
-    ? media 
+  const filteredPhotos = activeCategory === "Highlights" 
+    ? media.filter(photo => photo.is_highlight) 
     : media.filter(photo => photo.categories?.name === activeCategory);
 
   const handleNext = (e?: React.MouseEvent) => {
