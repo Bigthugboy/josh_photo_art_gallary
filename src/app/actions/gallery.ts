@@ -40,3 +40,8 @@ export async function deleteMediaBulk(ids: string[]) {
   const { error } = await supabase.from('media').delete().in('id', ids);
   return !error;
 }
+
+export async function toggleHighlight(id: string, is_highlight: boolean) {
+  const { error } = await supabase.from('media').update({ is_highlight }).eq('id', id);
+  return !error;
+}
