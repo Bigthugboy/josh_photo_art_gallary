@@ -7,7 +7,7 @@ import { getCategories, addCategory, getMedia, deleteMedia, addMediaRecord, dele
 import { supabase } from "@/lib/supabase";
 
 export default function GalleryManager() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Highlights");
   const [categories, setCategories] = useState<any[]>([]);
   const [media, setMedia] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -18,6 +18,7 @@ export default function GalleryManager() {
   
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [uploadCategory, setUploadCategory] = useState("");
+  const [uploadAsHighlight, setUploadAsHighlight] = useState(false);
   const [bulkMode, setBulkMode] = useState(false);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
@@ -27,8 +28,9 @@ export default function GalleryManager() {
     setCategories(cats);
     
     // fetch media
-    const catId = selectedCategory !== "All" ? cats.find(c => c.name === selectedCategory)?.id : undefined;
-    const items = await getMedia(catId);
+    const isHighlights = selectedCategory === "Highlights";
+    const catId = !isHighlights ? cats.find(c => c.name === selectedCategory)?.id : undefined;
+    const items = await getMedia(catId, isHighlights);
     setMedia(items);
     setLoading(false);
   };
@@ -83,7 +85,7 @@ export default function GalleryManager() {
         xhr.onload = async () => {
           if (xhr.status === 200) {
             const response = JSON.parse(xhr.responseText);
-            await addMediaRecord(response.secure_url, isVideo ? 'video' : 'image', uploadCategory);
+            await addMediaRecord(response.secure_url, isVideo ? 'video' : 'image', uploadCategory, uploadAsHighlight);
             resolve();
           } else {
             console.error("Upload failed:", xhr.responseText);
@@ -140,7 +142,7 @@ export default function GalleryManager() {
   const handleDeleteCategory = async (catId: string, catName: string) => {
     if (confirm(`Are you sure you want to delete the category "${catName}"? ALL media inside it will also be deleted!`)) {
       await deleteCategory(catId);
-      if (selectedCategory === catName) setSelectedCategory("All");
+      if (selectedCategory === catName) setSelectedCategory("Highlights");
       fetchData();
     }
   };
@@ -206,6 +208,15 @@ export default function GalleryManager() {
               <option value="">Select Category First</option>
               {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
             </select>
+            <label className="flex items-center gap-2 text-sm text-foreground/80 cursor-pointer bg-black/50 border border-white/10 rounded-lg px-4 py-2">
+              <input 
+                type="checkbox" 
+                checked={uploadAsHighlight} 
+                onChange={(e) => setUploadAsHighlight(e.target.checked)} 
+                className="rounded bg-black/50 border-white/10 text-yellow-500 focus:ring-yellow-500" 
+              />
+              Star as Highlight
+            </label>
             <input 
               type="file" 
               ref={fileInputRef} 
@@ -247,12 +258,13 @@ export default function GalleryManager() {
       <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 bg-black/20 p-4 rounded-xl border border-white/5">
         <div className="flex flex-wrap gap-2">
           <button 
-            onClick={() => setSelectedCategory("All")}
-            className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-              selectedCategory === "All" ? "bg-white/10 text-white" : "text-foreground/60 hover:text-white hover:bg-white/5"
+            onClick={() => setSelectedCategory("Highlights")}
+            className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+              selectedCategory === "Highlights" ? "bg-white/10 text-white" : "text-foreground/60 hover:text-white hover:bg-white/5"
             }`}
           >
-            All
+            <Star className="w-4 h-4" />
+            Highlights
           </button>
           {categories.map(cat => (
             <div key={cat.id} className={`flex items-center rounded-lg overflow-hidden transition-colors ${
