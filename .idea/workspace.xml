@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="180072a8-3f3a-464e-872b-e7099632bbb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/pricing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pricing/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/actions/gallery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/actions/gallery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/gallery/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/gallery/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/admin/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/portfolio/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/portfolio/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supabase-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/supabase-schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +43,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.018851802047745" />
-      <entry key="MS500" value="1.6210611492998332" />
-      <entry key="S2" value="2.461539995723125" />
-      <entry key="S5" value="2.7610329123163413" />
-      <entry key="S10" value="2.8761570473788076" />
-      <entry key="S30" value="2.9577065313654933" />
-      <entry key="S60" value="2.9787238651964456" />
-      <entry key="M2" value="2.9893293653346387" />
-      <entry key="M5" value="2.99572390201977" />
-      <entry key="M10" value="2.9978606413192344" />
-      <entry key="M15" value="2.9985734696636506" />
-      <entry key="M30" value="2.999286589180512" />
-      <entry key="H1" value="2.9996432581692893" />
-      <entry key="H2" value="2.999821619978385" />
-      <entry key="H4" value="2.9999108077125003" />
-      <entry key="D1" value="2.9999851343025323" />
-      <entry key="W1" value="2.999997876321189" />
+      <entry key="MS100" value="1.000001209907371" />
+      <entry key="MS500" value="1.206101640841938" />
+      <entry key="S2" value="5.127899716216159" />
+      <entry key="S5" value="11.368310178870255" />
+      <entry key="S10" value="16.11204793108682" />
+      <entry key="S30" value="20.895494090375895" />
+      <entry key="S60" value="22.377975562403257" />
+      <entry key="M2" value="23.17064700995796" />
+      <entry key="M5" value="23.663736386459753" />
+      <entry key="M10" value="23.83110415640639" />
+      <entry key="M15" value="23.88723221294379" />
+      <entry key="M30" value="23.943530633589475" />
+      <entry key="H1" value="23.971743912138006" />
+      <entry key="H2" value="23.985866600343066" />
+      <entry key="H4" value="23.99293196066938" />
+      <entry key="D1" value="23.998821807354464" />
+      <entry key="W1" value="23.99983168220697" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -77,23 +81,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9766001190542216" />
-      <entry key="MS500" value="1.599548806197037" />
-      <entry key="S2" value="2.4505232327879236" />
-      <entry key="S5" value="2.7557688420768063" />
-      <entry key="S10" value="2.8733577624770477" />
-      <entry key="S30" value="2.9567337023514146" />
-      <entry key="S60" value="2.97823231496564" />
-      <entry key="M2" value="2.9890822932832743" />
-      <entry key="M5" value="2.9956247602557293" />
-      <entry key="M10" value="2.997811018139463" />
-      <entry key="M15" value="2.998540375911652" />
-      <entry key="M30" value="2.9992700364858274" />
-      <entry key="H1" value="2.9996349803667863" />
-      <entry key="H2" value="2.9998174807132827" />
-      <entry key="H4" value="2.999908737988979" />
-      <entry key="D1" value="2.9999847893359766" />
-      <entry key="W1" value="2.999997827039943" />
+      <entry key="MS100" value="0.08597251828448607" />
+      <entry key="MS500" value="0.8103308841853573" />
+      <entry key="S2" value="4.939091245289828" />
+      <entry key="S5" value="11.239427721243135" />
+      <entry key="S10" value="16.028130776733605" />
+      <entry key="S30" value="20.86118357123513" />
+      <entry key="S60" value="22.359856187917504" />
+      <entry key="M2" value="23.161331149669124" />
+      <entry key="M5" value="23.659946513976628" />
+      <entry key="M10" value="23.829198456805806" />
+      <entry key="M15" value="23.88595934152832" />
+      <entry key="M30" value="23.94289299206804" />
+      <entry key="H1" value="23.971424789302382" />
+      <entry key="H2" value="23.98570696332871" />
+      <entry key="H4" value="23.992852123253318" />
+      <entry key="D1" value="23.998808498491403" />
+      <entry key="W1" value="23.999829780876475" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -181,14 +185,14 @@
       <workItem from="1787004367752" duration="3416000" />
       <workItem from="1787009068891" duration="369000" />
       <workItem from="1787518842858" duration="226000" />
-    </task>
-    <task id="LOCAL-00014" summary="add GalleryManager component for media upload and category management">
-      <option name="closed" value="true" />
-      <created>1786764681972</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1786764681972</updated>
+      <workItem from="1787519099661" duration="1470000" />
+      <workItem from="1787567122352" duration="373000" />
+      <workItem from="1787567520305" duration="12000" />
+      <workItem from="1787653365151" duration="3138000" />
+      <workItem from="1787739948348" duration="37000" />
+      <workItem from="1787740469958" duration="684000" />
+      <workItem from="1787866294145" duration="35000" />
+      <workItem from="1787956087695" duration="124000" />
     </task>
     <task id="LOCAL-00015" summary="add AdminLogin component for admin authentication and dashboard access">
       <option name="closed" value="true" />
@@ -574,14 +578,21 @@
       <option name="project" value="LOCAL" />
       <updated>1787009142431</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="update terms and conditions for clarity and enhance client expectations">
+      <option name="closed" value="true" />
+      <created>1787519127691</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1787519127692</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor media deletion logic and add bulk delete functionality for media and categories" />
     <MESSAGE value="replace admin panel branding with logo in layout component" />
     <MESSAGE value="update site title in layout component to reflect new branding" />
     <MESSAGE value="replace logo in navbar with new branding image" />
@@ -606,6 +617,7 @@
     <MESSAGE value="update workspace configuration for improved project management and version control setup" />
     <MESSAGE value="add admin interface for managing pricing packages with edit functionality" />
     <MESSAGE value="add functions for fetching and updating pricing packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="add functions for fetching and updating pricing packages" />
+    <MESSAGE value="update terms and conditions for clarity and enhance client expectations" />
+    <option name="LAST_COMMIT_MESSAGE" value="update terms and conditions for clarity and enhance client expectations" />
   </component>
 </project>
