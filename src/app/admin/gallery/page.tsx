@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { UploadCloud, X, Trash2, CheckSquare, Plus } from "lucide-react";
+import { UploadCloud, X, Trash2, CheckSquare, Plus, Star } from "lucide-react";
 import { motion } from "framer-motion";
-import { getCategories, addCategory, getMedia, deleteMedia, addMediaRecord, deleteCategory, deleteMediaBulk } from "@/app/actions/gallery";
+import { getCategories, addCategory, getMedia, deleteMedia, addMediaRecord, deleteCategory, deleteMediaBulk, toggleHighlight } from "@/app/actions/gallery";
 import { supabase } from "@/lib/supabase";
 
 export default function GalleryManager() {
@@ -49,7 +49,8 @@ export default function GalleryManager() {
   };
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
+    // Reverse the array so the OS-ordered files are uploaded such that the first selected gets the newest timestamp
+    const files = Array.from(e.target.files || []).reverse();
     if (files.length === 0 || !uploadCategory) {
       alert("Please select a file and a category first.");
       return;
@@ -111,6 +112,18 @@ export default function GalleryManager() {
     if (confirm("Delete this media?")) {
       await deleteMedia(id, url);
       fetchData();
+    }
+  };
+
+  const handleToggleHighlight = async (e: React.MouseEvent, id: string, currentStatus: boolean) => {
+    e.stopPropagation();
+    const newStatus = !currentStatus;
+    // Optimistic update
+    setMedia(media.map(m => m.id === id ? { ...m, is_highlight: newStatus } : m));
+    const success = await toggleHighlight(id, newStatus);
+    if (!success) {
+      alert("Failed to update highlight status.");
+      fetchData(); // revert on failure
     }
   };
 
@@ -294,10 +307,23 @@ export default function GalleryManager() {
                 </div>
               )}
 
-              {/* Single Delete Button (Only visible if not in bulk mode) */}
+              {/* Single Delete and Highlight Buttons (Only visible if not in bulk mode) */}
               {!bulkMode && (
-                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => handleDelete(item.id, item.url)} className="w-8 h-8 rounded-full bg-red-500/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-red-500">
+                <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <button 
+                    onClick={(e) => handleToggleHighlight(e, item.id, item.is_highlight)} 
+                    className={`w-8 h-8 rounded-full backdrop-blur-sm flex items-center justify-center transition-colors ${
+                      item.is_highlight ? 'bg-yellow-500 text-white' : 'bg-black/50 text-white hover:bg-yellow-500/80'
+                    }`}
+                    title={item.is_highlight ? "Remove from Highlights" : "Add to Highlights"}
+                  >
+                    <Star className={`w-4 h-4 ${item.is_highlight ? 'fill-current' : ''}`} />
+                  </button>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); handleDelete(item.id, item.url); }} 
+                    className="w-8 h-8 rounded-full bg-red-500/80 backdrop-blur-sm flex items-center justify-center text-white hover:bg-red-500"
+                    title="Delete Media"
+                  >
                     <Trash2 className="w-4 h-4" />
                   </button>
                 </div>
