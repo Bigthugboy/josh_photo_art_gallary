@@ -9,44 +9,60 @@ import { getPackages } from "@/app/actions/pricing";
 const defaultPackages = [
   {
     id: "1",
-    name: "The Signature Portrait",
-    price: "$299",
+    name: "The Essential Portrait",
+    price: "£200",
     image_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
-    description: "Perfect for personal branding, editorials, and intimate portraits.",
+    description: "Perfect for personal branding, quick birthday shoots, and clean headshots.",
     features: [
       "1 Hour Session",
+      "1 Outfit Included",
+      "6 High-End Retouched Photos",
       "Creative Direction",
-      "15 High-End Retouched Photos",
       "Private Online Gallery"
     ],
     is_popular: false,
   },
   {
     id: "2",
-    name: "The Cinematic Collection",
-    price: "$599",
+    name: "The Signature Portrait",
+    price: "£299",
     image_url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop",
-    description: "Ideal for couples, editorial campaigns, and extensive shoots.",
+    description: "Perfect for full birthday celebrations, editorial shoots, and timeless creative portraits.",
     features: [
-      "2-3 Hour Session",
-      "Up to 2 Locations",
-      "40 High-End Retouched Photos",
-      "Cinematic Color Grading",
+      "2+ Hour Session",
+      "2 Outfits Included (Custom rates available for 3+ outfits)",
+      "15 High-End Retouched Photos",
+      "Creative Direction",
       "Private Online Gallery"
     ],
     is_popular: true,
   },
   {
     id: "3",
-    name: "The Luxury Event",
-    price: "$1200",
+    name: "The Storyteller Collection",
+    price: "£750",
     image_url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop",
-    description: "Comprehensive coverage for high-end weddings and elite events.",
+    description: "Ideal for couples, full birthday stories, editorial campaigns, and extensive creative shoots.",
     features: [
+      "Up to 2-3 Outfits",
       "6 Hours Coverage",
       "Second Shooter Included",
       "200+ Masterfully Edited Photos",
       "Next-Day Teaser Delivery",
+      "Private Online Gallery"
+    ],
+    is_popular: false,
+  },
+  {
+    id: "4",
+    name: "The Grand Experience",
+    price: "£1,700",
+    image_url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop",
+    description: "Comprehensive coverage for high-end weddings, milestone birthday galas, and elite events.",
+    features: [
+      "Full day coverage",
+      "Videographer included",
+      "48hrs teaser delivery (10 photos)",
       "Private Online Gallery"
     ],
     is_popular: false,
@@ -191,13 +207,6 @@ export default function Pricing() {
               </ul>
             
               <div className="flex flex-col gap-4 mt-auto">
-                <button 
-                  onClick={() => setShowTerms(true)}
-                  className="w-full py-3 text-center rounded-xl font-bold uppercase tracking-wider transition-all border-2 border-[#ff8c00] text-[#ff8c00] hover:bg-[#ff8c00] hover:text-white"
-                >
-                  TERMS & CONDITIONS
-                </button>
-
                 <Link 
                   href="/booking" 
                   className={`w-full py-4 text-center rounded-xl font-bold uppercase tracking-wider transition-all ${
@@ -206,8 +215,15 @@ export default function Pricing() {
                       : "bg-white/10 text-white hover:bg-white/20"
                   }`}
                 >
-                  Commission
+                  Reserve session
                 </Link>
+                
+                <button 
+                  onClick={() => setShowTerms(true)}
+                  className="w-full text-center text-xs font-bold uppercase tracking-wider text-foreground/50 hover:text-primary transition-colors underline underline-offset-4"
+                >
+                  Terms & Conditions
+                </button>
               </div>
             </div>
           </motion.div>
