@@ -10,7 +10,7 @@ const defaultPackages = [
   {
     id: "1",
     name: "The Essential Portrait",
-    price: "£200",
+    price: "£180",
     image_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000&auto=format&fit=crop",
     description: "Perfect for personal branding, quick birthday shoots, and clean headshots.",
     features: [
@@ -24,37 +24,22 @@ const defaultPackages = [
   },
   {
     id: "2",
-    name: "The Signature Portrait",
-    price: "£299",
+    name: "The Storyteller Collection",
+    price: "£750",
     image_url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop",
-    description: "Perfect for full birthday celebrations, editorial shoots, and timeless creative portraits.",
+    description: "Ideal for couples, full birthday stories, editorial campaigns, and extensive creative shoots.",
     features: [
-      "2+ Hour Session",
-      "2 Outfits Included (Custom rates available for 3+ outfits)",
-      "15 High-End Retouched Photos",
-      "Creative Direction",
+      "Up to 2-3 Outfits",
+      "6 Hours Coverage",
+      "Second Shooter Included",
+      "100+ Masterfully Edited Photos",
+      "48Hrs Teaser Delivery",
       "Private Online Gallery"
     ],
     is_popular: true,
   },
   {
     id: "3",
-    name: "The Storyteller Collection",
-    price: "£750",
-    image_url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop",
-    description: "Ideal for couples, full birthday stories, editorial campaigns, and extensive creative shoots.",
-    features: [
-      "Up to 2-3 Outfits",
-      "6 Hours Coverage",
-      "Second Shooter Included",
-      "200+ Masterfully Edited Photos",
-      "Next-Day Teaser Delivery",
-      "Private Online Gallery"
-    ],
-    is_popular: false,
-  },
-  {
-    id: "4",
     name: "The Grand Experience",
     price: "£1,700",
     image_url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop",
@@ -145,14 +130,7 @@ export default function Pricing() {
   const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
-    async function fetchData() {
-      const data = await getPackages();
-      if (data && data.length > 0) {
-        setPackages(data);
-      }
-      setLoading(false);
-    }
-    fetchData();
+    setLoading(false);
   }, []);
 
   return (
