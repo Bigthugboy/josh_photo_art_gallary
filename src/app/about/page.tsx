@@ -42,7 +42,7 @@ export default function About() {
               <div className="text-sm text-foreground/60 uppercase tracking-wider">Shoots Completed</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">10+</div>
+              <div className="text-4xl font-bold text-primary mb-2">7+</div>
               <div className="text-sm text-foreground/60 uppercase tracking-wider">Years Experience</div>
             </div>
           </div>
